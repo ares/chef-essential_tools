@@ -60,6 +60,10 @@ template '/etc/tmux.conf' do
   source 'tmux.conf'
 end
 
+group "staff" do
+  members node[:user]
+end
+
 # place to install custom sw from source
 directory "/usr/local/src/" do
   group "staff"
